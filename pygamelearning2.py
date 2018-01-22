@@ -71,6 +71,30 @@ class PygView(object):
         myball2 = Ball(radius=10, color=(255,0,0), x=20, y=300,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=400,starty=300)
+        myball3 = Ball(radius=10, color=(0,255,0), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=200,starty=200)
+        myball4 = Ball(radius=10, color=(0,255,0), x=200, y=30,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=300,starty=200)
+        myball3 = Ball(radius=10, color=(0,0,255), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=0,starty=0)
+        myball3 = Ball(radius=10, color=(0,0,255), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=100,starty=100)
+        myball3 = Ball(radius=100, color=(0,255,0), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=400,starty=500)
+        myball3 = Ball(radius=10, color=(0,0,0), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=400,starty=3)
+        myball3 = Ball(radius=10, color=(0,0,0), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=4,starty=300)
+        myball3 = Ball(radius=10, color=(0,255,0), x=20, y=300,
+                 up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
+                 startx=1000,starty=800)
         running = True
         while running:
             milliseconds = self.clock.tick(self.fps)
@@ -142,20 +166,20 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         # to avoid the black background, make black the transparent color:
         # self.surface.set_colorkey((0,0,0))
-        # self.surface = self.surface.convert_alpha() # faster blitting with transparent color
+        # self.su-rface = self.surface.convert_alpha() # faster blitting with transparent color
         self.tail = []
    
     def update(self, seconds):
         
         pressedkeys = pygame.key.get_pressed() # keys that you can press all the time
         if pressedkeys[self.leftkey]:
-                self.dx -=3
+                self.dx -=10
         if pressedkeys[self.rightkey]:
-                self.dx +=3
+                self.dx +=10
         if pressedkeys[self.upkey]:
-                self.dy -= 3
+                self.dy -= 10
         if pressedkeys[self.downkey]:
-                self.dy += 3
+                self.dy += 10
         
         self.x += self.dx * seconds  
         self.y += self.dy * seconds  
@@ -163,11 +187,11 @@ class Ball(pygame.sprite.Sprite):
         if self.x < 0:
             #self.x = PygView.width
             self.x = 0
-            self.dx *= -100
+            self.dx *= -1
         if self.x > PygView.width:
             #self.x = 0
             self.x = PygView.width
-            self.dx *= -100
+            self.dx *= -1
         if self.y < 0:
             #self.y = PygView.height
             self.y = 0
