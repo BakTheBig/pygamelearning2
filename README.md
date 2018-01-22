@@ -1,3 +1,5 @@
 # pygamelearning2
 
-**a way of learning pygame **
+
+!(screenshot)fotonichtdumm.png
+!(screenshot)fotodumm.png
