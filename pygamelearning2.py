@@ -24,8 +24,10 @@ class PygView(object):
         PygView.width = width
         PygView.height = height
         self.screen = pygame.display.set_mode((self.width, self.height), pygame.DOUBLEBUF)
-        self.background = pygame.Surface(self.screen.get_size()).convert()  
-        self.background.fill((255,255,255)) # fill background white
+        self.background = pygame.Surface(self.screen.get_size()).convert()
+        self.background = pygame.image.load("cat.jpg")  
+        self.background = pygame.transform.scale(self.background, (PygView.width, PygView.height))
+        #self.background.fill((255,255,255)) # fill background white
         self.clock = pygame.time.Clock()
         self.fps = fps
         self.playtime = 0.0
@@ -68,31 +70,31 @@ class PygView(object):
     def run(self):
         self.paint() 
         myball = Ball(startx = 100,starty=200) # creating the Ball object
-        myball2 = Ball(radius=10, color=(255,0,0), x=20, y=300,
+        myball2 = Ball(radius=10, color=(255,0,0), x=400, y=300,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=400,starty=300)
-        myball3 = Ball(radius=10, color=(0,255,0), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,255,0), x=200, y=200,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=200,starty=200)
-        myball4 = Ball(radius=10, color=(0,255,0), x=200, y=30,
+        myball4 = Ball(radius=10, color=(0,255,0), x=300, y=200,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=300,starty=200)
-        myball3 = Ball(radius=10, color=(0,0,255), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,0,255), x=0, y=0,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=0,starty=0)
-        myball3 = Ball(radius=10, color=(0,0,255), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,0,255), x=100, y=100,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=100,starty=100)
-        myball3 = Ball(radius=100, color=(0,255,0), x=20, y=300,
+        myball3 = Ball(radius=100, color=(0,255,0), x=400, y=500,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=400,starty=500)
-        myball3 = Ball(radius=10, color=(0,0,0), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,0,0), x=400, y=3,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=400,starty=3)
-        myball3 = Ball(radius=10, color=(0,0,0), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,0,0), x=4, y=300,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=4,starty=300)
-        myball3 = Ball(radius=10, color=(0,255,0), x=20, y=300,
+        myball3 = Ball(radius=10, color=(0,255,0), x=1000, y=800,
                  up=pygame.K_UP, down = pygame.K_DOWN, left = pygame.K_LEFT, right = pygame.K_RIGHT,
                  startx=1000,starty=800)
         running = True
